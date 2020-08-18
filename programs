@@ -1,0 +1,14 @@
+xmonad
+xmonad-contrib
+xmonad-utils
+xmobar
+xdotool
+dunst
+udiskie
+picom
+
+feh
+dmenu
+termite
+ttf-inconsolata
+xorg-xinit

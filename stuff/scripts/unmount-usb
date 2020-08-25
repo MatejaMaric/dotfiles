@@ -6,6 +6,6 @@ if [ $opt_num == 0 ]; then
 elif [ $opt_num == 1 ]; then
 	udiskie-umount "$options"
 else
-	unmount_device=$(echo "$options" | rofi -dmenu -p "What device you want to unmount?")
-	udiskie-umount "$unmount_device"
+	unmount_device=$(echo "$options" | dmenu -p "What device you want to unmount?")
+	[[ ! -z "$unmount_device" ]] && udiskie-umount "$unmount_device"
 fi

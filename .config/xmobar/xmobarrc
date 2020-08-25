@@ -1,4 +1,7 @@
-Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+Config { 
+      -- X Logical Font Description (xlsfonts, xfontsel)
+      -- font = "-misc-fira mono-medium-*-*-*-10-*-*-*-*-*-*-*"
+         font = "xft:Fira Mono:pixelsize=11"
        , additionalFonts = []
        , borderColor = "black"
        , border = TopB

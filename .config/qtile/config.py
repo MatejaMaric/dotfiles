@@ -32,7 +32,8 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = guess_terminal()
+#terminal = guess_terminal()
+terminal = "st"
 
 keys = [
     # Switch between windows in current stack pane
@@ -91,14 +92,14 @@ for i in groups:
     ])
 
 layouts = [
+    layout.MonadTall(),
+    layout.MonadWide(),
     layout.Max(),
-    layout.Stack(num_stacks=2),
+    #layout.Stack(num_stacks=2),
     # Try more layouts by unleashing below layouts.
     # layout.Bsp(),
     # layout.Columns(),
     # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
@@ -121,12 +122,16 @@ screens = [
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.WindowName(),
+
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
+#                widget.CapsNumLockIndicator(),
+#                widget.KeyboardLayout(),
+                widget.Volume(),
 #                widget.TextBox("default config", name="default"),
 #                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),

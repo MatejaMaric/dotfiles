@@ -33,7 +33,7 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 #terminal = guess_terminal()
-terminal = "st"
+terminal = "termite"
 
 keys = [
     # Switch between windows in current stack pane

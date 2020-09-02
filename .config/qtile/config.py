@@ -46,6 +46,12 @@ keys = [
 	#MY KEYS
     Key([mod], "t", lazy.window.toggle_floating(),
         desc="Toggle floating"),
+    Key([mod], "h", lazy.spawn("amixer -q sset Master 5%+"),
+        desc="Increase volume"),
+    Key([mod], "n", lazy.spawn("amixer -q sset Master 5%-"),
+        desc="Decrease volume"),
+    Key([mod], "m", lazy.spawn("amixer -q sset Master toggle"),
+        desc="Toggle mute"),
 	########
 
     # Switch between windows in current stack pane

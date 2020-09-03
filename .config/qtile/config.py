@@ -52,6 +52,8 @@ keys = [
         desc="Decrease volume"),
     Key([mod], "m", lazy.spawn("amixer -q sset Master toggle"),
         desc="Toggle mute"),
+    Key([mod], "e", lazy.spawn("bash -c ~/programs/scripts/unmount-usb"),
+        desc="Eject USB"),
 	########
 
     # Switch between windows in current stack pane

@@ -1,0 +1,43 @@
+// coc-snippets coc-spell-checker coc-markdownlint
+// coc-vimlsp coc-python coc-clangd coc-sql coc-sh
+// coc-html coc-emmet coc-css coc-tsserver coc-json coc-yaml
+// coc-phpactor
+// coc-texlab
+// coc-cmake
+// coc-java coc-xml
+// coc-explorer
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "html",
+    "css",
+    "javascript",
+    "json",
+    "yaml",
+    "markdown",
+    "python"
+  ],
+  // phpactor coc extension
+  "phpactor.enable": true,
+  // Path to phpactor
+  "phpactor.path": "/home/your-user-name/programs/phpactor/bin/phpactor",
+  // python config
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  // snippets
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "~/.config/nvim/utils/snips"
+  ],
+  // explorer
+  "explorer.width": 30,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings": {
+    "<cr>": [
+      "expandable?",
+      "expand",
+      "open"
+    ],
+    "v": "open:vsplit"
+  }
+}

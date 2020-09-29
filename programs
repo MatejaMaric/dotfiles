@@ -7,8 +7,8 @@ picom
 feh
 dmenu rofi
 xterm termite
-ttf-fira-mono
-xorg-xinit
+ttf-fira-mono ttf-nerd-fonts-symbols
+xorg-xinit numlockx
 
 #i3
 #xmonad

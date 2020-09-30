@@ -11,24 +11,27 @@ from libqtile.utils import guess_terminal
 mod = "mod4"
 terminal = "termite"
 
+
 @hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
     subprocess.call([home])
 
+
 keys = [
-	#MY KEYS
-    Key([mod], "t", lazy.window.toggle_floating(),
-        desc="Toggle floating"),
-    Key([mod], "h", lazy.spawn("amixer -q sset Master 5%+"),
+    # Audio
+    Key([mod], "h", lazy.spawn("amixer -q sset Master 1%+"),
         desc="Increase volume"),
-    Key([mod], "n", lazy.spawn("amixer -q sset Master 5%-"),
+    Key([mod], "n", lazy.spawn("amixer -q sset Master 1%-"),
         desc="Decrease volume"),
     Key([mod], "m", lazy.spawn("amixer -q sset Master toggle"),
         desc="Toggle mute"),
+
+    # Programs...
     Key([mod], "e", lazy.spawn("bash -c ~/stuff/scripts/unmount-usb"),
         desc="Eject USB"),
-	########
+    Key([mod, "control"], "p", lazy.spawn("scrot -ze 'mv $f ~/stuff/pictures/screenshots/'"),
+        desc="Take a screenshot"),
 
     # Switch between windows in current stack pane
     Key([mod], "k", lazy.layout.down(),
@@ -37,25 +40,41 @@ keys = [
         desc="Move focus up in stack pane"),
 
     # Move windows up or down in current stack
-    Key([mod, "control"], "k", lazy.layout.shuffle_down(),
+    Key([mod, "shift"], "k", lazy.layout.shuffle_down(),
         desc="Move window down in current stack "),
-    Key([mod, "control"], "j", lazy.layout.shuffle_up(),
+    Key([mod, "shift"], "j", lazy.layout.shuffle_up(),
         desc="Move window up in current stack "),
 
+    # Change window size
+    Key([mod], "g", lazy.layout.grow(),
+        desc="Grow window size."),
+    Key([mod], "v", lazy.layout.shrink(),
+        desc="Decrease window size."),
+    Key([mod], "c", lazy.layout.normalize(),
+        desc="Return to normal sizing."),
+
+    # Floating
+    Key([mod], "t", lazy.window.toggle_floating(),
+        desc="Toggle floating"),
+
+    # Keyboard layout
+    Key([mod, "control"], "space", lazy.widget["keyboardlayout"].next_keyboard(),
+        desc="Next keyboard layout."),
+
     # Switch window focus to other pane(s) of stack
-    Key([mod], "space", lazy.layout.next(),
-        desc="Switch window focus to other pane(s) of stack"),
+    # Key([mod], "space", lazy.layout.next(),
+    # desc="Switch window focus to other pane(s) of stack"),
 
     # Swap panes of split stack
-    Key([mod, "shift"], "space", lazy.layout.rotate(),
-        desc="Swap panes of split stack"),
+    # Key([mod, "shift"], "space", lazy.layout.rotate(),
+    # desc="Swap panes of split stack"),
 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack"),
+    # Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
+    # desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
     # Toggle between different layouts as defined below
@@ -108,16 +127,25 @@ screens = [
                 widget.Prompt(),
                 widget.WindowName(),
 
+                # What is this?
                 widget.Chord(
                     chords_colors={
                         'launch': ("#ff0000", "#ffffff"),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
+
                 widget.Spacer(length=10),
-#                widget.CapsNumLockIndicator(),
-#                widget.KeyboardLayout(),
+                # widget.CapsNumLockIndicator(),
+                widget.KeyboardLayout(
+                    configured_keyboards=['us', 'rs alternatequotes'],
+                    display_map={'us': 'english',
+                                 'rs alternatequotes': 'serbian'},
+                    option="caps:swapescape"
+                ),
                 widget.Systray(),
+                #   墳 婢
+                widget.TextBox(text=" 墳"),
                 widget.Volume(),
                 widget.Clock(format='%A %d %b %I:%M %p'),
             ],

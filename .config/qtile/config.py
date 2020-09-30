@@ -140,8 +140,9 @@ screens = [
                 widget.KeyboardLayout(
                     configured_keyboards=['us', 'rs alternatequotes'],
                     display_map={'us': 'english',
-                                 'rs alternatequotes': 'serbian'},
-                    option="caps:swapescape"
+                                 'rs alternatequotes': 'serbian'}
+                    # option is buggy...
+                    # option='caps:swapescape'
                 ),
                 widget.Systray(),
                 #   墳 婢

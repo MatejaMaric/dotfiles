@@ -32,6 +32,12 @@ keys = [
         desc="Eject USB"),
     Key([mod, "control"], "p", lazy.spawn("scrot -ze 'mv $f ~/stuff/pictures/screenshots/'"),
         desc="Take a screenshot"),
+    Key([mod], "x", lazy.spawn("mpc toggle"),
+        desc="Pause/Resume MPD playback"),
+    Key([mod], "z", lazy.spawn("mpc next"),
+        desc="MPD next song"),
+    Key([mod, "shift"], "z", lazy.spawn("mpc prev"),
+        desc="MPD previous song"),
 
     # Switch between windows in current stack pane
     Key([mod], "k", lazy.layout.down(),

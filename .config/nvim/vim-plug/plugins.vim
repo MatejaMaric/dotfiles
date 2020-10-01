@@ -32,5 +32,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'honza/vim-snippets'
     " Vim-Which-Key > SpaceVim plugin
     Plug 'liuchengxu/vim-which-key'
+    " Git integration
+    Plug 'mhinz/vim-signify'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
+    Plug 'junegunn/gv.vim'
 
 call plug#end()

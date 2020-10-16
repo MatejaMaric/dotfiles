@@ -150,11 +150,11 @@ screens = [
                     # option is buggy...
                     # option='caps:swapescape'
                 ),
-                widget.Systray(),
                 #   墳 婢
                 widget.TextBox(text=" 墳"),
                 widget.Volume(),
                 widget.Clock(format='%A %d %b %I:%M %p'),
+                widget.Systray(),
             ],
             24,
         ),

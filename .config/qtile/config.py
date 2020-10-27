@@ -128,9 +128,9 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
-                widget.CurrentLayout(),
                 widget.GroupBox(disable_drag=True),
                 widget.Prompt(),
+                widget.CurrentLayout(),
                 widget.WindowName(),
 
                 # What is this?

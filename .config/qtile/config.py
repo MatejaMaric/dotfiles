@@ -34,6 +34,8 @@ keys = [
         desc="Take a screenshot"),
     Key([mod], "x", lazy.spawn("mpc toggle"),
         desc="Pause/Resume MPD playback"),
+    Key([mod, "shift"], "x", lazy.spawn("bash -c ~/stuff/scripts/mpd_show"),
+        desc="Display song."),
     Key([mod], "z", lazy.spawn("mpc next"),
         desc="MPD next song"),
     Key([mod, "shift"], "z", lazy.spawn("mpc prev"),
@@ -64,7 +66,7 @@ keys = [
         desc="Toggle floating"),
 
     # Keyboard layout
-    Key([mod, "control"], "space", lazy.widget["keyboardlayout"].next_keyboard(),
+    Key([mod], "space", lazy.widget["keyboardlayout"].next_keyboard(),
         desc="Next keyboard layout."),
 
     # Switch window focus to other pane(s) of stack
@@ -91,6 +93,9 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
     Key([mod], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
+
+    Key([mod], "b", lazy.screen.toggle_group(),
+        desc="Switch to the previously active group."),
 ]
 
 groups = [Group(i) for i in "asdfuiop"]
@@ -193,6 +198,7 @@ floating_layout = layout.Floating(float_rules=[
     {'wname': 'branchdialog'},  # gitk
     {'wname': 'pinentry'},  # GPG key password entry
     {'wmclass': 'ssh-askpass'},  # ssh-askpass
+    {'wmclass': 'gcr-prompter'},  # ssh-askpass
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"

@@ -149,9 +149,11 @@ screens = [
                 widget.Spacer(length=10),
                 # widget.CapsNumLockIndicator(),
                 widget.KeyboardLayout(
-                    configured_keyboards=['us', 'rs alternatequotes'],
+                    configured_keyboards=['us', 'rs alternatequotes', 'rs latin'],
                     display_map={'us': 'english',
-                                 'rs alternatequotes': 'serbian'}
+                                 'rs alternatequotes': 'serbian cyrillic',
+                                 'rs latin': 'serbian latin'
+                                 }
                     # option is buggy...
                     # option='caps:swapescape'
                 ),

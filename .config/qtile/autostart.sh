@@ -5,7 +5,7 @@ setxkbmap -option caps:swapescape
 numlockx &
 dunst &
 udiskie &
-compton &
+compton --backend glx &
 feh --bg-fill ~/stuff/pictures/alps-house.jpg
 gpg-agent &
 ssh-agent &

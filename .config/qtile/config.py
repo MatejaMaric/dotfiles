@@ -116,8 +116,8 @@ for i in groups:
     ])
 
 layouts = [
-    layout.MonadTall(border_focus='81a1ca'),
-    layout.MonadWide(border_focus='81a1ca'),
+    layout.MonadTall(border_focus='81a1ca', margin=8),
+    layout.MonadWide(border_focus='81a1ca', margin=8),
     layout.Max(border_focus='81a1ca'),
     layout.Floating(border_focus='81a1ca'),
 ]

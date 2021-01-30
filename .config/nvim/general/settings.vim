@@ -6,7 +6,7 @@ let g:mapleader = "\<Space>"
 " disable autocomment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " compile markdown to html
-autocmd BufWritePost *.md silent !markdown <afile> > plain.html
+" autocmd BufWritePost *.md silent !markdown <afile> > plain.html
 " NerdCommenter
 filetype plugin on
 

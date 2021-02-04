@@ -255,3 +255,7 @@ timeout = 8
 #    urgency = normal
 #
 # vim: ft=cfg
+
+[log_notifications]
+    script = ~/.local/bin/save_notification.sh
+

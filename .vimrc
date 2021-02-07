@@ -39,7 +39,7 @@ nnoremap <silent> <F10> :!./gen.sh <enter>
 " You can't stop me
 cmap w!! w !sudo tee %
 
-autocmd BufWritePost *.md silent !markdown <afile> > plain.html
+" autocmd BufWritePost *.md silent !markdown <afile> > plain.html
 " autocmd BufWritePost *.md silent !markdown <afile> > <afile>:r.html
 
 " run on current filename

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 raw="$(mpc)"
 song=$(echo "$raw" | sed -n '1p')

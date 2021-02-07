@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 options=$(lsblk | grep /media/$USER | rev | cut -d ' ' -f 1 | rev)
 [ -n "$options" ] && opt_num=$(echo "$options" | wc -l) || opt_num=0
 if [ $opt_num == 0 ]; then

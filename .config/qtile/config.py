@@ -28,13 +28,13 @@ keys = [
         desc="Toggle mute"),
 
     # Programs...
-    Key([mod], "e", lazy.spawn("bash -c ~/stuff/scripts/unmount-usb"),
+    Key([mod], "e", lazy.spawn("bash -c ~/.local/bin/unmount_usb.sh"),
         desc="Eject USB"),
     Key([mod, "control"], "p", lazy.spawn("scrot -ze 'mv $f ~/stuff/pictures/screenshots/'"),
         desc="Take a screenshot"),
     Key([mod], "x", lazy.spawn("mpc toggle"),
         desc="Pause/Resume MPD playback"),
-    Key([mod, "shift"], "x", lazy.spawn("bash -c ~/stuff/scripts/mpd_show"),
+    Key([mod, "shift"], "x", lazy.spawn("bash -c ~/.local/bin/mpd_show.sh"),
         desc="Display song."),
     Key([mod], "z", lazy.spawn("mpc next"),
         desc="MPD next song"),

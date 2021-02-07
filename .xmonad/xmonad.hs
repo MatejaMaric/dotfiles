@@ -86,7 +86,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm, xK_bracketleft), spawn "amixer -q sset Master 5%+")
     , ((modm, xK_apostrophe), spawn "amixer -q sset Master 5%-")
     , ((modm, xK_semicolon), spawn "amixer -q sset Master toggle")
-    , ((modm,               xK_u     ), spawn "~/stuff/scripts/unmount-usb")
+    , ((modm,               xK_u     ), spawn "~/.local/bin/unmount_usb.sh")
     , ((modm,               xK_s     ), spawn "scrot -ze 'mv $f ~/stuff/pictures/screenshots/'")
     -- my keybindings stop -----------------------------------------------
 

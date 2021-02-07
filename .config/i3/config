@@ -14,7 +14,7 @@ bindsym $mod+apostrophe exec amixer -q sset Master 5%-
 bindsym $mod+p exec amixer -q sset Master toggle
 
 bindsym $mod+m exec scrot -ze 'mv $f ~/screenshots/'
-bindsym $mod+u exec ~/scripts/unmount-usb
+bindsym $mod+u exec ~/.local/bin/unmount_usb.sh
 #END
 
 floating_modifier $mod

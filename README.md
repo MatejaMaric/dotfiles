@@ -23,8 +23,9 @@ Configuration files for programs I use and used to use, including some helper sc
 
 ## Helper scripts:
 
-- mpd_show: Show currently playing song in pop-up.
-- unmount-usb: Unmount currently mounted USB drive or one selected from list of currently mounted USB drives.
+- mpd_show.sh: Show currently playing song in pop-up.
+- unmount_usb.sh: Unmount currently mounted USB drive or one selected from list of currently mounted USB drives.
+- save_notification.sh: Save notifications to `/tmp/notifications`.
 
 ## Note on Neovim!
 

@@ -114,7 +114,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-PATH=$PATH:/home/$USER/.local/bin/
+PATH=$PATH:$HOME/.local/bin/:$HOME/.config/composer/vendor/bin
 
 export EDITOR='nvim'
 export VISUAL='nvim'

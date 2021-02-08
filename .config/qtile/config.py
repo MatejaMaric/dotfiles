@@ -149,13 +149,13 @@ screens = [
                 widget.Spacer(length=10),
                 # widget.CapsNumLockIndicator(),
                 widget.KeyboardLayout(
-                    configured_keyboards=['us', 'rs alternatequotes', 'rs latin'],
+                    configured_keyboards=[
+                        'us', 'rs alternatequotes', 'rs latin'],
                     display_map={'us': 'english',
                                  'rs alternatequotes': 'serbian cyrillic',
                                  'rs latin': 'serbian latin'
-                                 }
-                    # option is buggy...
-                    # option='caps:swapescape'
+                                 },
+                    option='caps:swapescape'
                 ),
                 #   墳 婢
                 widget.TextBox(text=" 墳"),

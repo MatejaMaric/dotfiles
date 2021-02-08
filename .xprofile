@@ -1,0 +1,2 @@
+#!/bin/sh
+eval $(keychain --clear --eval --agents gpg,ssh --quiet)

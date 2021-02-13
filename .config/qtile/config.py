@@ -91,8 +91,9 @@ keys = [
 
     Key([mod, "control"], "r", lazy.restart(), desc="Restart qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
-    Key([mod], "r", lazy.spawncmd(),
-        desc="Spawn a command using a prompt widget"),
+
+    Key([mod], "r", lazy.spawn("rofi -show run"),
+        desc="Use Rofi to start a new program."),
 
     Key([mod], "b", lazy.screen.toggle_group(),
         desc="Switch to the previously active group."),

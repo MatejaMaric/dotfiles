@@ -8,6 +8,7 @@ Configuration files for programs I use and used to use, including some helper sc
 - qtile
 - termite
 - dunst
+- rofi
 - nvim
 - zathura
 - mpd

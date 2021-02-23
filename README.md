@@ -5,29 +5,29 @@ Configuration files for programs I use and used to use, including some helper sc
 ## Configuration files for programs I currently use:
 
 - bash
-- qtile
-- termite
 - dunst
-- rofi
-- nvim
-- zathura
 - mpd
 - ncmpcpp
 - newsboat
+- nvim
+- qtile
+- rofi
+- termite
+- zathura
 
 ## Configuration files for programs I used:
 
 - i3
 - polybar
-- xmonad
 - xmobar
+- xmonad
 
 ## Helper scripts:
 
-- mpd_show.sh: Show currently playing song in pop-up.
-- unmount_usb.sh: Unmount currently mounted USB drive or one selected from list of currently mounted USB drives.
-- save_notification.sh: Save notifications to `/tmp/notifications`.
 - get_password.sh: Select password (from `pass`) to copy to clipboard.
+- mpd_show.sh: Show currently playing song in pop-up.
+- save_notification.sh: Save notifications to `/tmp/notifications`.
+- unmount_usb.sh: Unmount currently mounted USB drive or one selected from list of currently mounted USB drives.
 
 ## Note on Neovim!
 

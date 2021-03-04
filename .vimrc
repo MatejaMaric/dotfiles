@@ -36,5 +36,5 @@ nnoremap <C-l> <C-w>l
 inoremap jk <Esc>
 inoremap kj <Esc>
 
-" Saving changes even if not root (not sure if it works)
+" Saving changes even if not root
 cmap w!! w !sudo tee %

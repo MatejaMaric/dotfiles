@@ -1,4 +1,4 @@
-PATH=$PATH:$HOME/.local/bin/:$HOME/.config/composer/vendor/bin
+PATH=$PATH:/sbin:/usr/sbin:$HOME/.local/bin/:$HOME/.config/composer/vendor/bin
 
 export EDITOR='nvim'
 export VISUAL='nvim'

@@ -4,7 +4,7 @@ import subprocess
 from typing import List  # noqa: F401
 
 from libqtile import bar, layout, widget, hook
-from libqtile.config import Click, Drag, Group, Key, Screen
+from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
@@ -117,6 +117,7 @@ for i in groups:
     ])
 
 layouts = [
+    # layout.Tile(),
     layout.MonadTall(border_focus='81a1ca', margin=8),
     layout.MonadWide(border_focus='81a1ca', margin=8),
     layout.Max(border_focus='81a1ca'),
@@ -139,25 +140,28 @@ screens = [
                 widget.CurrentLayout(),
                 widget.WindowName(),
 
-                # What is this?
-                widget.Chord(
-                    chords_colors={
-                        'launch': ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
+                # widget.Chord(
+                #     chords_colors={
+                #         'launch': ("#ff0000", "#ffffff"),
+                #     },
+                #     name_transform=lambda name: name.upper(),
+                # ),
+                # widget.Spacer(length=10),
 
-                widget.Spacer(length=10),
                 # widget.CapsNumLockIndicator(),
-                widget.KeyboardLayout(
-                    configured_keyboards=[
-                        'us', 'rs alternatequotes', 'rs latin'],
-                    display_map={'us': 'english',
-                                 'rs alternatequotes': 'serbian cyrillic',
-                                 'rs latin': 'serbian latin'
-                                 },
-                    option='caps:swapescape'
-                ),
+                # widget.Maildir(maildir_path='~/.mail'),
+
+                # widget.KeyboardLayout(),
+                # widget.KeyboardLayout(
+                #     configured_keyboards=[
+                #         'us', 'rs alternatequotes', 'rs latin'],
+                #     display_map={'us': 'english',
+                #                  'rs alternatequotes': 'serbian cyrillic',
+                #                  'rs latin': 'serbian latin'
+                #                  },
+                #     option='caps:swapescape'
+                # ),
+
                 #   墳 婢
                 widget.TextBox(text=" 墳"),
                 widget.Volume(),
@@ -165,6 +169,7 @@ screens = [
                 widget.Systray(),
             ],
             24,
+            opacity=0.8,
         ),
     ),
 ]
@@ -185,26 +190,39 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
+
     {'wmclass': 'pinentry-gtk-2'},
+
     # Run the utility of `xprop` to see the wm class and name of an X client.
-    {'wmclass': 'confirm'},
-    {'wmclass': 'dialog'},
-    {'wmclass': 'download'},
-    {'wmclass': 'error'},
-    {'wmclass': 'file_progress'},
-    {'wmclass': 'notification'},
-    {'wmclass': 'splash'},
-    {'wmclass': 'toolbar'},
-    {'wmclass': 'confirmreset'},  # gitk
-    {'wmclass': 'makebranch'},  # gitk
-    {'wmclass': 'maketag'},  # gitk
-    {'wname': 'branchdialog'},  # gitk
-    {'wname': 'pinentry'},  # GPG key password entry
-    {'wmclass': 'ssh-askpass'},  # ssh-askpass
-    {'wmclass': 'gcr-prompter'},  # ssh-askpass
+    *layout.Floating.default_float_rules,
+    Match(wm_class='confirmreset'),  # gitk
+    Match(wm_class='makebranch'),  # gitk
+    Match(wm_class='maketag'),  # gitk
+    Match(wm_class='ssh-askpass'),  # ssh-askpass
+    Match(title='branchdialog'),  # gitk
+    Match(title='pinentry'),  # GPG key password entry
+
+    # {'wmclass': 'confirmreset'},  # gitk
+    # {'wmclass': 'makebranch'},  # gitk
+    # {'wmclass': 'maketag'},  # gitk
+    # {'wmclass': 'ssh-askpass'},  # ssh-askpass
+    # {'wname': 'branchdialog'},  # gitk
+    # {'wname': 'pinentry'},  # GPG key password entry
+
+    # {'wmclass': 'confirm'},
+    # {'wmclass': 'dialog'},
+    # {'wmclass': 'download'},
+    # {'wmclass': 'error'},
+    # {'wmclass': 'file_progress'},
+    # {'wmclass': 'notification'},
+    # {'wmclass': 'splash'},
+    # {'wmclass': 'toolbar'},
+
+    # {'wmclass': 'gcr-prompter'},  # ssh-askpass
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
+reconfigure_screens = True
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the

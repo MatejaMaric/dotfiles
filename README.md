@@ -14,6 +14,7 @@ Configuration files for programs I use and used to use, including some helper sc
 - rofi
 - termite
 - zathura
+- tmux
 
 ## Configuration files for programs I used:
 

@@ -9,7 +9,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = "termite"
+terminal = "st -e tmux"
 
 
 @hook.subscribe.startup_once
@@ -140,27 +140,27 @@ screens = [
                 widget.CurrentLayout(),
                 widget.WindowName(),
 
+                widget.Spacer(length=10),
+
                 # widget.Chord(
                 #     chords_colors={
                 #         'launch': ("#ff0000", "#ffffff"),
                 #     },
                 #     name_transform=lambda name: name.upper(),
                 # ),
-                # widget.Spacer(length=10),
 
                 # widget.CapsNumLockIndicator(),
                 # widget.Maildir(maildir_path='~/.mail'),
 
-                # widget.KeyboardLayout(),
-                # widget.KeyboardLayout(
-                #     configured_keyboards=[
-                #         'us', 'rs alternatequotes', 'rs latin'],
-                #     display_map={'us': 'english',
-                #                  'rs alternatequotes': 'serbian cyrillic',
-                #                  'rs latin': 'serbian latin'
-                #                  },
-                #     option='caps:swapescape'
-                # ),
+                widget.KeyboardLayout(
+                    configured_keyboards=[
+                        'us', 'rs alternatequotes', 'rs latin'],
+                    display_map={'us': 'english',
+                                 'rs alternatequotes': 'serbian cyrillic',
+                                 'rs latin': 'serbian latin'
+                                 },
+                    option='caps:swapescape'
+                ),
 
                 #   墳 婢
                 widget.TextBox(text=" 墳"),
@@ -169,7 +169,7 @@ screens = [
                 widget.Systray(),
             ],
             24,
-            opacity=0.8,
+            opacity=0.85,
         ),
     ),
 ]

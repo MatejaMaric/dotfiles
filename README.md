@@ -11,6 +11,7 @@ Configuration files for programs I use and used to use, including some helper sc
 - newsboat
 - nvim
 - qtile
+- awesome
 - rofi
 - termite
 - zathura

@@ -14,7 +14,7 @@ terminal = "st -e tmux"
 
 @hook.subscribe.startup_once
 def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    home = os.path.expanduser('~/.local/bin/autostart.sh')
     subprocess.call([home])
 
 

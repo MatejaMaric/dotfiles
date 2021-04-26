@@ -186,7 +186,7 @@ globalkeys = gears.table.join(
 
     -- Widgets
     awful.key({ modkey }, "space", function () mykeyboardlayout.next_layout() end,
-              {description = "run prompt", group = "launcher"})
+              {description = "next keyboard layout", group = "widgets"})
 )
 
 clientkeys = gears.table.join(

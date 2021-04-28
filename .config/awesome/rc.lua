@@ -186,7 +186,16 @@ globalkeys = gears.table.join(
 
     -- Widgets
     awful.key({ modkey }, "space", function () mykeyboardlayout.next_layout() end,
-              {description = "next keyboard layout", group = "widgets"})
+              {description = "next keyboard layout", group = "widgets"}),
+
+    -- Audio
+    awful.key({ modkey }, "h", function () awful.spawn("amixer -q sset Master 1%+") end,
+              {description = "Increase volume", group = "widgets"}),
+    awful.key({ modkey }, "n", function () awful.spawn("amixer -q sset Master 1%-") end,
+              {description = "Decrease volume", group = "widgets"}),
+    awful.key({ modkey }, "m", function () awful.spawn("amixer -q sset Master toggle") end,
+              {description = "Toggle mute", group = "widgets"})
+
 )
 
 clientkeys = gears.table.join(

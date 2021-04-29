@@ -191,7 +191,18 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "n", function () awful.spawn("amixer -q sset Master 1%-") end,
               {description = "Decrease volume", group = "widgets"}),
     awful.key({ modkey }, "m", function () awful.spawn("amixer -q sset Master toggle") end,
-              {description = "Toggle mute", group = "widgets"})
+              {description = "Toggle mute", group = "widgets"}),
+
+    -- Music
+    awful.key({ modkey }, "x", function () awful.spawn("mpc toggle") end,
+              {description = "Pause/Resume MPD playback", group = "music"}),
+    awful.key({ modkey, "Shift" }, "x", function () awful.spawn("bash -c ~/.local/bin/mpd_show.sh") end,
+              {description = "Display song.", group = "music"}),
+
+    awful.key({ modkey }, "z", function () awful.spawn("mpc next") end,
+              {description = "MPD next song", group = "music"}),
+    awful.key({ modkey, "Shift" }, "z", function () awful.spawn("mpc prev") end,
+              {description = "MPD previous song", group = "music"})
 
 )
 

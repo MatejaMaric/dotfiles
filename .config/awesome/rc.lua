@@ -187,11 +187,11 @@ globalkeys = gears.table.join(
 
     -- Audio
     awful.key({ modkey }, "h", function () awful.spawn("amixer -q sset Master 1%+") end,
-              {description = "Increase volume", group = "widgets"}),
+              {description = "Increase volume", group = "audio"}),
     awful.key({ modkey }, "n", function () awful.spawn("amixer -q sset Master 1%-") end,
-              {description = "Decrease volume", group = "widgets"}),
+              {description = "Decrease volume", group = "audio"}),
     awful.key({ modkey }, "m", function () awful.spawn("amixer -q sset Master toggle") end,
-              {description = "Toggle mute", group = "widgets"}),
+              {description = "Toggle mute", group = "audio"}),
 
     -- Music
     awful.key({ modkey }, "x", function () awful.spawn("mpc toggle") end,
@@ -202,7 +202,13 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "z", function () awful.spawn("mpc next") end,
               {description = "MPD next song", group = "music"}),
     awful.key({ modkey, "Shift" }, "z", function () awful.spawn("mpc prev") end,
-              {description = "MPD previous song", group = "music"})
+              {description = "MPD previous song", group = "music"}),
+
+    -- Utilities
+    awful.key({ modkey }, "e", function () awful.spawn("bash -c ~/.local/bin/unmount_usb.sh") end,
+              {description = "Eject USB", group = "utilities"}),
+    awful.key({ modkey, "Control" }, "p", function () awful.spawn("scrot -ze 'mv $f ~/stuff/pictures/screenshots/'") end,
+              {description = "Take a screenshot", group = "utilities"})
 
 )
 

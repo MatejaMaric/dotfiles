@@ -66,8 +66,6 @@ awful.layout.layouts = {
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
 
-awful.spawn.with_shell("~/.local/bin/autostart.sh")
-
 -- Wibar --------------------------------------------------------------------
 
 -- Create a textclock widget

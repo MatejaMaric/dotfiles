@@ -12,12 +12,6 @@ mod = "mod4"
 terminal = "st -e tmux"
 
 
-@hook.subscribe.startup_once
-def autostart():
-    home = os.path.expanduser('~/.local/bin/autostart.sh')
-    subprocess.call([home])
-
-
 keys = [
     # Audio
     Key([mod], "h", lazy.spawn("amixer -q sset Master 1%+"),

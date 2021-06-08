@@ -8,6 +8,7 @@ numlockx &
 
 dunst &
 udiskie &
+dwmblocks &
 
 #picom &
 compton --backend glx -b &

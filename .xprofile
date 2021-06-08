@@ -12,6 +12,6 @@ udiskie &
 #picom &
 compton --backend glx -b &
 
-feh --bg-fill ~/stuff/pictures/nantes.jpg
+feh --bg-fill ~/stuff/pictures/bg.jpg
 
 mpd &

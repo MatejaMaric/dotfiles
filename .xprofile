@@ -8,7 +8,7 @@ numlockx &
 
 dunst &
 udiskie &
-dwmblocks &
+dwmblocks > /dev/null &
 
 #picom &
 compton --backend glx -b &

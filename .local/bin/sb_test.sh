@@ -17,4 +17,4 @@ case $BUTTON in
 	5) notify-send "$BUTTON" ;;
 esac
 
-echo "Test"
+printf "Test"
